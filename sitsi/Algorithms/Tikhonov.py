@@ -62,7 +62,7 @@ class Tikhonov:
         self.method = method
 
         if self.fitness is None:
-            self.fitness = lambda inp, synth : np.sum(np.abs(inp - synth)**2)
+            self.fitness = lambda inp, synth : np.sum((inp - synth)**2)
 
         # Store input data and Green's functions
         for i in inp:
