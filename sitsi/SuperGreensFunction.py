@@ -155,6 +155,7 @@ class SuperGreensFunction:
                 ix = idx[self.splitdim]
                 ifnone = lambda a, b: b if a is None else a
                 lst = range(ifnone(ix.start, 0), ifnone(ix.stop, len(self.fileparamlist)), ifnone(ix.step, 1))
+                filename = filename[0]
             else:
                 lst = [idx[self.splitdim]]
 
