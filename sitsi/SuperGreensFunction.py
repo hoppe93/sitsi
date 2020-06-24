@@ -179,16 +179,19 @@ class SuperGreensFunction:
             return func
 
 
-    def getParameterIndex(self, v):
+    def getParameterIndex(self, v, name=None):
         """
         Returns the index of the varied parameter corresponding to the
         given parameter value.
         """
+        if name is None:
+            name = self.format[self.splitdim]
+
         arr = None
-        if   self.format[self.splitdim] == 'r': arr = self.r
-        elif self.format[self.splitdim] == '1': arr = self.p1
-        elif self.format[self.splitdim] == '2': arr = self.p2
-        elif self.format[self.splitdim] == 'w': arr = self.w
+        if   name == 'r': arr = self.r
+        elif name == '1': arr = self.p1
+        elif name == '2': arr = self.p2
+        elif name == 'w': arr = self.w
             
         return np.argmin(np.abs(arr-v))
 
