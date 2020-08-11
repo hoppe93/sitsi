@@ -119,6 +119,8 @@ class SuperGreensFunction:
 
         if type(p) == int or type(p) == tuple:
             f = self._getFunction(p)
+        elif type(p) == slice:
+            f = self._getFunction(index)
         elif type(p) == float:
             f = self._getFunction(self.getParameterIndex(p))
         else:
