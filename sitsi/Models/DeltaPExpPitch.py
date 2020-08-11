@@ -38,7 +38,7 @@ class DeltaPExpPitch:
         if np.asarray(p).size != 1 or np.asarray(C).size != 1:
             raise InverterException("p and C must be scalars.")
     
-        pi = self.green.getParameterIndex(p)
+        pi = self.green.getParameterIndex(p, '1')
 
         # Delta in p (just get the particular slice of the Green's function)
         gf = self.green.get(p1=pi)
